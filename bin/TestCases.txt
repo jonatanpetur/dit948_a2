@@ -1,0 +1,88 @@
+Test1
+------
+
+Welcome to DIT958 shop
+What's your name?
+Jib
+Hi Jib. Please choose one of the following options:
+
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+1
+Product name: >CD of Leonard Cohen
+Seller: Javier
+Price: 30
+How many: 4
+Discount (enter 0 if no discount applies): 0
+Does Buy2Take3 apply? Y/N Y
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+1
+Product name: TV
+Seller: Maria
+Price: 5000
+How many: 1
+Discount (enter 0 if no discount applies): 20
+Does Buy2Take3 apply? Y/N N
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+0
+CD of Leonard Cohen    22.50 SEK. Sold by Javier
+CD of Leonard Cohen    22.50 SEK. Sold by Javier
+CD of Leonard Cohen    22.50 SEK. Sold by Javier
+CD of Leonard Cohen    22.50 SEK. Sold by Javier
+TV [discounted by 20.00%]    4000.00 SEK. Sold by Maria
+
+In total you have to pay 4090.0 SEK
+
+
+
+Test 2
+------
+
+Welcome to DIT958 shop
+What's your name?
+Musard
+Hi Musard. Please choose one of the following options:
+
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+1
+Product name: Milk
+Seller: John
+Price: 15
+How many: 4
+Discount (enter 0 if no discount applies): 20
+Does Buy2Take3 apply? Y/NN
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+0
+Milk [discounted by 20.00%]    12.00 SEK. Sold by John
+Milk [discounted by 20.00%]    12.00 SEK. Sold by John
+Milk [discounted by 20.00%]    12.00 SEK. Sold by John
+Milk [discounted by 20.00%]    12.00 SEK. Sold by John
+
+In total you have to pay 48.00 SEK
+
+Test 3
+-------
+
+Welcome to DIT958 shop
+What's your name?
+Omar
+Hi Omar. Please choose one of the following options:
+
+Enter  1 to buy a product
+Enter  0 to checkout and proceed with the payement
+1
+Product name: Rice
+Seller: Ivo
+Price: 30
+How many:  7
+Discount (enter 0 if no discount applies): 50
+Does Buy2Take3 apply? Y/N Y
+Cannot reduce the price of Rice
+
+
+
+
