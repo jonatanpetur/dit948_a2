@@ -40,7 +40,7 @@ public class DiscountedProduct extends Product {
 		double originalPrice = original.getPrice(cart);
 		return originalPrice - (originalPrice * discount/100);
 	}
-
+	
 	/**
 	 * Return the string representation of the product
 	 * Example: CD [discounted 20 %] 

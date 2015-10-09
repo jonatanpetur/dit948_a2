@@ -1,6 +1,5 @@
 import static dit948.SimpleIO.*;
 import java.io.IOException;
-import jline.console.ConsoleReader;
 /**
  *  Class representing a shopping cart application for the
  *  second assignment in DIT948, 2015 edition.
@@ -28,6 +27,9 @@ public class Main {
 		 
 		 print("Price : ");
 		 double price = readDouble();
+		 
+		 print("How many : ");
+		 int quantity = readInt();
 		 
 		 print("Discount (enter 0 if no discount applies) : ");
 		 double discountPercentage = readDouble();
@@ -92,28 +94,12 @@ public class Main {
 			 }
 		 }
 		 
-		 cart.addProduct(product);		 
+		 cart.addProduct(product, quantity);		 
 	 }
 	 
-	 public static char readCharacter()
-	 {
-		 char c = '\0'; 
-		 
-		 try
-		 {
-			 ConsoleReader cr = new ConsoleReader();
-			 c = (char)cr.readCharacter();
-		 }
-		 catch(IOException e)
-		 {
-			 c = '\0';
-		 }
-		 
-		 return c;
-	 }
-
 	// Main method to interact with a customer 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		 println("Welcome to DIT958 shop");
 		 println("What's your name?");
 		 String customer = readLine();
@@ -121,7 +107,18 @@ public class Main {
 		 println("");
 		 
 		 Cart cart = new Cart();
-		 askCustomer(cart);
+		 boolean cont = false;
+		 while(!cont)
+		 {
+			 askCustomer(cart);
+			 
+			 println("Add another product? (y/n) : ");
+			 char answer = readString().charAt(0);
+			 cont = !(Character.toLowerCase(answer) == 'y'); 
+		 }
+		 
+		 println(cart);
+		 
 		 //Implement the user interface here
 		 // Ask the user to choose 0 (buy product) or 
 		 // 1 (checkout), depending on  what they want to do
