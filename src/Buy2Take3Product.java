@@ -61,6 +61,7 @@ public class Buy2Take3Product extends Product {
 			if(product.equals(this))
 			{
 				countSame++;
+				
 				if(product == this)
 				{
 					if(countSame % 3 == 0)
@@ -76,6 +77,21 @@ public class Buy2Take3Product extends Product {
 		}
 		
 		return original.getPrice(cart);	
+	}
+	
+	public boolean equals(Object obj)
+	{
+		Buy2Take3Product product;
+		if(obj instanceof Buy2Take3Product)
+		{
+			product = (Buy2Take3Product)obj;
+		}
+		else
+		{
+			return false;
+		}
+		
+		return this.original.equals(product.original); 
 	}
 	
 	public String toString() {

@@ -84,7 +84,7 @@ public class Main {
 		 if(b2t3)
 		 {
 			 try
-			 {
+		+	 {
 				 product = new Buy2Take3Product(product); 
 			 }
 			 catch(InvalidArgumentException e)
@@ -112,7 +112,7 @@ public class Main {
 		 {
 			 askCustomer(cart);
 			 
-			 println("Add another product? (y/n) : ");
+			 println("Add another product? (y/N) : ");
 			 char answer = readString().charAt(0);
 			 cont = !(Character.toLowerCase(answer) == 'y'); 
 		 }
