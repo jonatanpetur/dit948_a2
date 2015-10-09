@@ -41,7 +41,7 @@ public class Main {
 		 {
 			 print("Does Buy2Take3 apply? y/N : ");
 			 
-			 b2t3Answer = readCharacter();
+			 b2t3Answer = readChar();
 			 if (Character.toLowerCase(b2t3Answer) == 'y')
 			 {
 				 b2t3 = true;
