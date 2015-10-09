@@ -91,10 +91,8 @@ public class Main {
 				 println(e.getMessage());
 			 }
 		 }
-		 cart.addProduct(product);
-		 println(cart);
 		 
-		 
+		 cart.addProduct(product);		 
 	 }
 	 
 	 public static char readCharacter()
