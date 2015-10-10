@@ -45,7 +45,7 @@ public class Product {
 	 * @return name
 	 */
 	public final String getName() {
-		return this.name;
+		return name;
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class Product {
 	 * @return price
 	 */	
 	public double getPrice(Cart cart) {
-		return this.price;
+		return price;
 	}
 
 	/**

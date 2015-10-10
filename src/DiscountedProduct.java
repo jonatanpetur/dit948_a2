@@ -46,6 +46,6 @@ public class DiscountedProduct extends Product {
 	 * Example: CD [discounted 20 %] 
 	 */
 	public String toString() {
-	     return original.getName() + " [discounted" + discount +"%]";
+	     return original.getName() + " [discounted " + discount +"%]";
 	}
 }

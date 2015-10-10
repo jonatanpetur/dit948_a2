@@ -58,10 +58,10 @@ public class Cart  {
 	public double totalPrice(){
 		double price = 0;
 		
-		for(Product product : products)
+		for(int i = 0; i < position; i++)
 	    {
-	    	price += product.getPrice(this);
-	    }
+			price += products[i].getPrice(this);
+		}
 		
 		return price;
 	}
@@ -77,9 +77,12 @@ public class Cart  {
 		String result = "";
 	    for (int i = 0; i < position; i++) {
 	    	Product product = products[i];
-	    	result += product.toString() + " " +  product.getPrice(this) + " Sold by " + product.getSeller() + '\n';
+	    	result += product.toString() + " " + String.format("%.2f", product.getPrice(this)) + " Sold by " + product.getSeller() + '\n';
 		}	    
-		return result;
+	    
+	    result += "\nTotal: " + String.format("%.2f", this.totalPrice());
+		
+	    return result;
 	}
 
 }

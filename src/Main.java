@@ -20,10 +20,10 @@ public class Main {
 		 // price, number of products, discount and 
 		 // if Buy2Take 3 applies. 			
 		 print("Product name : ");
-		 String name = readString();
+		 String name = readLine();
 		 		 
 		 print("Seller : ");
-		 String seller = readString();
+		 String seller = readLine();
 		 
 		 print("Price : ");
 		 double price = readDouble();
@@ -41,7 +41,7 @@ public class Main {
 		 
 		 while(!cont)
 		 {
-			 print("Does Buy2Take3 apply? y/N : ");
+			 print("Does Buy2Take3 apply? (y/N) : ");
 			 
 			 b2t3Answer = readChar();
 			 if (Character.toLowerCase(b2t3Answer) == 'y')
@@ -78,13 +78,12 @@ public class Main {
 				 println("Error encountered while discounting product");
 				 println(e.getMessage());
 			 }
-			 
 		 }
 
 		 if(b2t3)
 		 {
 			 try
-		+	 {
+			 {
 				 product = new Buy2Take3Product(product); 
 			 }
 			 catch(InvalidArgumentException e)
@@ -100,29 +99,42 @@ public class Main {
 	// Main method to interact with a customer 
 	public static void main(String[] args)
 	{
-		 println("Welcome to DIT958 shop");
-		 println("What's your name?");
-		 String customer = readLine();
-		 println("Hi "+customer+". Please choose one of the following options:");
-		 println("");
-		 
-		 Cart cart = new Cart();
-		 boolean cont = false;
-		 while(!cont)
-		 {
-			 askCustomer(cart);
-			 
-			 println("Add another product? (y/N) : ");
-			 char answer = readString().charAt(0);
-			 cont = !(Character.toLowerCase(answer) == 'y'); 
-		 }
-		 
-		 println(cart);
-		 
 		 //Implement the user interface here
 		 // Ask the user to choose 0 (buy product) or 
 		 // 1 (checkout), depending on  what they want to do
 		 // See TestCases.txt for several examples
 
+		 println("Welcome to DIT958 shop");
+		 print("What's your name? ");
+		 String customer = readLine();
+		 println("Hi "+customer+". Please choose one of the following options:");
+		 
+		 Cart cart = new Cart();
+		 boolean cont = false;
+		 while(!cont)
+		 {
+			 println("");		 
+			 println("Buy a product: 0");
+			 println("Checkout: 1");
+			 print(": ");
+			 char answer = readString().charAt(0);
+			 println("");
+			 if(answer == '0')
+			 {
+				 askCustomer(cart);
+			 }
+			 else if(answer == '1')
+			 {
+				 cont = true;
+			 }
+			 else
+			 {
+				 println("Try again");
+			 }
+		 }
+		 
+		 println(cart);
+		 
+		 
 	}
 }

@@ -58,25 +58,15 @@ public class Buy2Take3Product extends Product {
 		
 		for(Product product : cart.getProducts())
 		{
-			if(product.equals(this))
+			if(this == product)
 			{
 				countSame++;
-				
-				if(product == this)
-				{
-					if(countSame % 3 == 0)
-					{
-						return 0.0;
-					}
-					else
-					{
-						return original.getPrice(cart);
-					}
-				}
 			}
 		}
 		
-		return original.getPrice(cart);	
+		double b2t3discount = (int)(countSame/3) * (original.getPrice(cart) / countSame); 
+		
+		return original.getPrice(cart) - b2t3discount;
 	}
 	
 	public boolean equals(Object obj)
@@ -95,6 +85,6 @@ public class Buy2Take3Product extends Product {
 	}
 	
 	public String toString() {
-		return "asdf";
+		return original.getName() + " [Buy two take three]";
 	}
 }
