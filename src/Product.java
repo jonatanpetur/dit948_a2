@@ -66,23 +66,6 @@ public class Product {
 		//Nothing to do here
 		return true;
 	}
-	
-	public boolean equals(Object obj)
-	{
-		Product product;
-		if(obj instanceof Product)
-		{
-			product = (Product) obj;
-		}
-		else
-		{
-			return false;
-		}
-		
-		return(	this.name == product.name 	&&
-				this.price == product.price &&
-				this.seller == product.seller);	
-	}
 
 	/**
 	 * Return the name of the product

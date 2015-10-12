@@ -24,11 +24,21 @@ public class DiscountedProduct extends Product {
 	    // terminate the program. Use "System.exit(0);" to terminate.
 		
 		super(original); 	
-		if (original instanceof Buy2Take3Product) {
-			throw new InvalidArgumentException("A product that has buy 2 take 3 cannot also have a discount");
+		if (!original.canBeReduced()) {
+			throw new InvalidArgumentException("Product price cannot be reduced");
 		}
 		this.original = original;
 		this.discount = discount;
+	}
+	
+	/**
+	 * Return false if the product price can not be
+	 * reduced
+	 * @return 
+	 */
+	public boolean canBeReduced() {
+		// You can not discount the price of Discount product
+		return false;
 	}
 
 	/**
@@ -46,6 +56,6 @@ public class DiscountedProduct extends Product {
 	 * Example: CD [discounted 20 %] 
 	 */
 	public String toString() {
-	     return original.getName() + " [discounted " + discount +"%]";
+	     return original.getName() + " [discounted by " + discount +"%]";
 	}
 }

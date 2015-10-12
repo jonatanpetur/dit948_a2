@@ -26,9 +26,9 @@ public class Buy2Take3Product extends Product {
 		// terminate the program. Use "System.exit(0);" to terminate. 
 		super(original);
 		
-		if(original instanceof DiscountedProduct)
+		if(!original.canBeReduced())
 		{
-			throw new InvalidArgumentException("A buy 2 take 3 product cannot also be discounted");
+			throw new InvalidArgumentException("Product price cannot be reduced");
 		}
 		
 		this.original = original;
@@ -67,21 +67,6 @@ public class Buy2Take3Product extends Product {
 		double b2t3discount = (int)(countSame/3) * (original.getPrice(cart) / countSame); 
 		
 		return original.getPrice(cart) - b2t3discount;
-	}
-	
-	public boolean equals(Object obj)
-	{
-		Buy2Take3Product product;
-		if(obj instanceof Buy2Take3Product)
-		{
-			product = (Buy2Take3Product)obj;
-		}
-		else
-		{
-			return false;
-		}
-		
-		return this.original.equals(product.original); 
 	}
 	
 	public String toString() {

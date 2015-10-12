@@ -1,5 +1,4 @@
 import static dit948.SimpleIO.*;
-import java.io.IOException;
 /**
  *  Class representing a shopping cart application for the
  *  second assignment in DIT948, 2015 edition.
@@ -75,8 +74,9 @@ public class Main {
 			 }
 			 catch(InvalidArgumentException e)
 			 {
-				 println("Error encountered while discounting product");
+				 println("\nError encountered while discounting product");
 				 println(e.getMessage());
+				 System.exit(-1);
 			 }
 		 }
 
@@ -88,8 +88,9 @@ public class Main {
 			 }
 			 catch(InvalidArgumentException e)
 			 {
-				 println("Error encountered while discounting product");
+				 println("\nError encountered while applying buy 2 take 3 to product");
 				 println(e.getMessage());
+				 System.exit(-1);
 			 }
 		 }
 		 
@@ -114,16 +115,16 @@ public class Main {
 		 while(!cont)
 		 {
 			 println("");		 
-			 println("Buy a product: 0");
-			 println("Checkout: 1");
+			 println("Buy a product: 1");
+			 println("Checkout: 0");
 			 print(": ");
 			 char answer = readString().charAt(0);
 			 println("");
-			 if(answer == '0')
+			 if(answer == '1')
 			 {
 				 askCustomer(cart);
 			 }
-			 else if(answer == '1')
+			 else if(answer == '0')
 			 {
 				 cont = true;
 			 }
